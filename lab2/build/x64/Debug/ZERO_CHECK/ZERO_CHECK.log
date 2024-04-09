@@ -1,0 +1,9 @@
+﻿  '\\ad.liu.se\home\phiro138\Desktop\TND004 labs\lab 2\build'
+  CMD.EXE was started with the above path as the current directory.
+  UNC paths are not supported.  Defaulting to Windows directory.
+  1>Checking Build System
+  CMake is re-running because generate.stamp.list is missing.
+  -- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.19045.
+  -- Configuring done (0.2s)
+  -- Generating done (1.1s)
+  -- Build files have been written to: //ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/build

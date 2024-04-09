@@ -1,0 +1,10 @@
+^\\AD.LIU.SE\HOME\PHIRO138\DESKTOP\TND004 LABS\LAB 2\CODE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-S//ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/code" "-B//ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/build" --check-stamp-file "//ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

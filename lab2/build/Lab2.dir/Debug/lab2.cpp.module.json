@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "Lab2.dir\\Debug\\lab2.obj",
+            "outputs": [
+                "\\\\ad.liu.se\\home\\phiro138\\Desktop\\TND004 labs\\lab 2\\build\\Lab2.dir\\Debug\\vc143.pdb",
+                "Lab2.dir\\Debug\\"
+            ],
+            "requires": []
+        }
+    ]
+}
