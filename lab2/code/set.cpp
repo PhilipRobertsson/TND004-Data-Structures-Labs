@@ -204,12 +204,48 @@ std::partial_ordering Set::operator<=>(const Set& S) const {
     if (cardinality() == S.cardinality()) return std::partial_ordering::unordered;
 
     // Om S1 är kortare än S2, kan endast hela S1 få plats i S2.
-    if (cardinality() < S.cardinality()) return std::partial_ordering::less;
+    if (cardinality() < S.cardinality()) {
+        Node* ptr1 = head->next;
+        Node* ptr2 = S.head->next;
 
+
+        while (ptr1->next != nullptr) { //ptr1 blir prioriterad då denne är kortast
+
+            if (ptr1->value < ptr2->value) {
+                return std::partial_ordering::unordered;
+            }
+            if (ptr1->value > ptr2->value) {
+                ptr2 = ptr2->next;
+            }
+            if (ptr1->value == ptr2->value) {
+                ptr1 = ptr1->next;
+                ptr2 = ptr2->next;
+            }
+        }
+        return std::partial_ordering::less; //Om hela ptr1 gick att ta sig igenom MÅSTE alla element i S1 finnas i S2
+    }
     // Om inget av ovanstående har returnat något, måste hela S2 finnas inuti S1. 
     // Process of Elimination genom hela denna funktion.
-    if (cardinality() > S.cardinality())return std::partial_ordering::greater;
+    if (cardinality() > S.cardinality()) {
+        Node* ptr1 = head->next;
+        Node* ptr2 = S.head->next;
 
+
+        while (ptr2->next != nullptr) { //ptr2 blir prioriterad då denne är kortast
+
+            if (ptr1->value > ptr2->value) {
+                return std::partial_ordering::unordered;
+            }
+            if (ptr1->value < ptr2->value) {
+                ptr2 = ptr2->next;
+            }
+            if (ptr1->value == ptr2->value) {
+                ptr1 = ptr1->next;
+                ptr2 = ptr2->next;
+            }
+        }
+        return std::partial_ordering::greater; //Om hela ptr2 gick att ta sig igenom MÅSTE alla element i S1 finnas i S2
+    }
     return std::partial_ordering::unordered;
 }
 
