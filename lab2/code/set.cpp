@@ -52,7 +52,7 @@ Set::Set(const std::vector<int>& list_of_values) : Set{} {  // create an empty l
 
         Node* ptr = new Node(list_of_values[i], tail, ptr1);
         ptr1->next = ptr;
-        tail->prev = ptr;   // uppdateras konstant så att sista varvet, blir tail->prev det sista värdet
+        tail->prev = ptr;   // uppdateras konstant sÃ¥ att sista varvet, blir tail->prev det sista vÃ¤rdet
         ptr1 = ptr;
         
     }
@@ -194,21 +194,23 @@ bool Set::operator==(const Set& S) const {
 std::partial_ordering Set::operator<=>(const Set& S) const {
     // IMPLEMENT before Lab2 HA
     
-    // Om S1 == S2, det kan vi redan checka med föregående funktion.
+    // Om S1 == S2, det kan vi redan checka med fÃ¶regÃ¥ende funktion.
     if (*this == S) return std::partial_ordering::equivalent;
 
-    // Om de är samma längd, men olika innehåll. Då kan hela S1 inte finnas inuti S2 eller vice versa, för om längderna var samma hade de varit ekvivalenta. 
-    // Men vi vet att de inte är ekvivalenta. De har samma längd, men olika värden.
-    // Alltså kan inte ett helt set få plats i det andra.
-    // Därmed är de inte S1 < S2 eller S1 > S2.
+    // Om de Ã¤r samma lÃ¤ngd, men olika innehÃ¥ll. DÃ¥ kan hela S1 inte finnas inuti S2 eller vice versa, fÃ¶r om lÃ¤ngderna var samma hade de varit ekvivalenta. 
+    // Men vi vet att de inte Ã¤r ekvivalenta. De har samma lÃ¤ngd, men olika vÃ¤rden.
+    // AlltsÃ¥ kan inte ett helt set fÃ¥ plats i det andra.
+    // DÃ¤rmed Ã¤r de inte S1 < S2 eller S1 > S2.
     if (cardinality() == S.cardinality()) return std::partial_ordering::unordered;
 
-    // Om S1 är kortare än S2, kan endast hela S1 få plats i S2.
+    // Om S1 Ã¤r kortare Ã¤n S2, kan endast hela S1 fÃ¥ plats i S2.
     if (cardinality() < S.cardinality()) return std::partial_ordering::less;
 
-    // Om inget av ovanstående har returnat något, måste hela S2 finnas inuti S1. 
+    // Om inget av ovanstÃ¥ende har returnat nÃ¥got, mÃ¥ste hela S2 finnas inuti S1. 
     // Process of Elimination genom hela denna funktion.
-    return std::partial_ordering::greater;
+    if (cardinality() > S.cardinality())return std::partial_ordering::greater;
+
+    return std::partial_ordering::unordered;
 }
 
 /*
