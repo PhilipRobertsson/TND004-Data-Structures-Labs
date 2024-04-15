@@ -104,8 +104,6 @@ int main() {
         assert(Set::get_count_nodes() == 12);
 
         S1 = S2 = S3;
-
-        std::cout << Set::get_count_nodes() << "\n";
         assert(Set::get_count_nodes() == 15);
 
         // Test
