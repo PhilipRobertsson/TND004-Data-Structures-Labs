@@ -1,3 +1,0 @@
-C:/Users/jarja/Documents/TND004/lab1/build/CMakeFiles/Lab1.dir
-C:/Users/jarja/Documents/TND004/lab1/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/jarja/Documents/TND004/lab1/build/CMakeFiles/ZERO_CHECK.dir
