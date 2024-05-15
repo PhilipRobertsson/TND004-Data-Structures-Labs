@@ -1,3 +1,0 @@
-//ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/build/CMakeFiles/Lab2.dir
-//ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/build/CMakeFiles/ALL_BUILD.dir
-//ad.liu.se/home/phiro138/Desktop/TND004 labs/lab 2/build/CMakeFiles/ZERO_CHECK.dir
